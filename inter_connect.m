@@ -48,7 +48,7 @@ for fileNum = 1:length(fileNames)
     end
     numOfIntrcnnct(fileNum, 1) = count-1;
     inpPortHandles = {}; inpPortList = {};
-    disp(['### Get the list of inputs and outputs for the subsystem: ' subSysNames{fileNum,1}]);
+    disp(['### Get the list of inputs and outputs for the subsystem: ' subSysNames{ fileNum,1}]);
     inpPortHandles = find_system([newMdlName '/' subSysNames{fileNum,1}],'SearchDepth',1, 'BlockType', 'Inport');
     inpPortList = cellfun(@(x) get_param(x, 'Name'), inpPortHandles,'UniformOutput',0);
     numOfInputs(fileNum,1) = length(inpPortList);
